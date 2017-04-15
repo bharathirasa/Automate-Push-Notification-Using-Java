@@ -10,9 +10,9 @@ public class Push {
 		
 		
 		String url = "https://android.googleapis.com/gcm/send";
-		String API_ACCESS_KEY="AIzaSyAavPj-wjgeAGBl6QTcJyremlCTeEtxG0c";
-		String registrationIds[]=new String[1];
-		registrationIds[0]="cV0Z7xnjG4g:APA91bEZhqZyPNjIK_xtb-3d169pHYfdIGgoTxAyC7F34pkWkoe4RSTZqY07PAMmJbL6ZhalFrFZOjSSQPV7-0o1iZsKA5mEio2ptEmomnmjUJ33mtseg2yYBOtNA-JsKeovwfHugLn6";
+		String API_ACCESS_KEY="YOUR_API_KEY";
+	
+		String registrationIds="DEVICE_REGISTRATION_ID";
 
 		URL obj = new URL(url);
 		HttpsURLConnection con = (HttpsURLConnection) obj.openConnection();
@@ -24,7 +24,7 @@ public class Push {
 		
 		con.setRequestProperty("Content-Type", "application/json");
 		
-		String urlParameters = "{\"data\":{\"message\":\"Sample Message\"},\"registration_ids\":[\""+registrationIds[0]+"\"]}";
+		String urlParameters = "{\"data\":{\"message\":\"Sample Message\"},\"registration_ids\":[\""+registrationIds+"\"]}";
 
 		// Send post request
 		con.setDoOutput(true);
